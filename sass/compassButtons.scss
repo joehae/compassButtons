@@ -1,0 +1,134 @@
+/**
+ *		SASS/Compass Buttons
+ *		Author: johanneshagenberg@googlemail.com
+ *
+ *		requires compass/css3
+ *
+ */
+
+// button presentational attributes
+@mixin button-color ($accent-color: $dark-grey, $background-color: white) {
+	
+	// darkening the $accent-color accents
+	$base-color: darken($accent-color, 20%);
+	
+	// coloring the buttons text-color depending on its background-color
+	@if (lightness($background-color) >= 90%) {
+		color: $base-color;
+		
+	} @else {
+		color: white;
+	}
+	
+	background-color: $background-color;
+	border-color: $base-color;
+	@include single-transition(background-color, .2s);
+	
+	&:hover {
+		background-color: $accent-color;
+		
+		// inverting the buttons text-color depending on the background-color
+		@if (lightness($accent-color) <= 90%) {
+			color: $background-color;
+		
+		} @else {
+			color: black;
+		}
+		
+	}
+	
+	&:active {
+		background-color: $base-color;
+	}
+	
+	&:disabled {
+		
+		&:hover,
+		&:active {
+			color: $base-color;
+			background-color: $background-color;
+		}
+	}
+}
+
+// button behaviour
+@mixin button ($height: 34px, $width: 100px, $radius: 0) {
+	
+	// keeping the width dynamic to ensure a flexible usage
+	min-width: $width;
+	height: $height;
+	border: 1px solid;
+	margin: 0;
+	line-height: $height;
+	text-align: center;
+	padding: 0 10px;
+	cursor: pointer;
+	@include inline-block;
+	@include box-sizing(border-box);
+	@include border-radius($radius);
+	
+	&:focus {
+		outline: none;
+	}
+	
+	&:disabled {
+		opacity: .2;
+		cursor: default;
+	}
+}
+
+// custom color-swatches
+$dark-grey:				#282828;
+
+// corporate colors
+$blue:						#75a3d0;
+$green:						#a4cb7b;
+$red:							#dd5f77;
+$yellow:					#f7f15a;
+$violet:					#acadd4;
+
+// custom selectors to create a default set of buttons
+.button {
+	@include button();
+	@include button-color();
+}
+
+.button-blue {
+	@extend .button;
+	@include button-color($blue);
+}
+
+.button-green {
+	@extend .button;
+	@include button-color($green);
+}
+
+.button-red {
+	@extend .button;
+	@include button-color($red);
+}
+
+.button-violet {
+	@extend .button;
+	@include button-color($violet);
+}
+
+[class *= "-rounded"] {
+	@include button(42px, 100px, 4px);
+}
+
+.button-blue-rounded {
+	@include button-color(darken($blue, 20%), $blue);
+}
+
+.button-green-rounded {
+	@include button-color(darken($green, 20%), $green);
+}
+
+.button-red-rounded {
+	@include button-color(darken($red, 20%), $red);
+}
+
+.button-violet-rounded {
+	@include button-color(darken($violet, 20%), $violet);
+}

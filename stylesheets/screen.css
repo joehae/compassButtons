@@ -1,0 +1,347 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 22, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 28, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 30, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 103, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+/* line 32, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+/**
+ *		SASS/Compass Buttons
+ *		Author: johanneshagenberg@googlemail.com
+ *
+ *		requires compass/css3
+ *
+ */
+/* line 91, ../sass/compassButtons.scss */
+.button, .button-blue, .button-green, .button-red, .button-violet {
+  min-width: 100px;
+  height: 34px;
+  border: 1px solid;
+  margin: 0;
+  line-height: 34px;
+  text-align: center;
+  padding: 0 10px;
+  cursor: pointer;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  color: black;
+  background-color: white;
+  border-color: black;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+  /* line 70, ../sass/compassButtons.scss */
+  .button:focus, .button-blue:focus, .button-green:focus, .button-red:focus, .button-violet:focus {
+    outline: none; }
+  /* line 74, ../sass/compassButtons.scss */
+  .button:disabled, .button-blue:disabled, .button-green:disabled, .button-red:disabled, .button-violet:disabled {
+    opacity: .2;
+    cursor: default; }
+  /* line 27, ../sass/compassButtons.scss */
+  .button:hover, .button-blue:hover, .button-green:hover, .button-red:hover, .button-violet:hover {
+    background-color: #282828;
+    color: white; }
+  /* line 40, ../sass/compassButtons.scss */
+  .button:active, .button-blue:active, .button-green:active, .button-red:active, .button-violet:active {
+    background-color: black; }
+  /* line 47, ../sass/compassButtons.scss */
+  .button:disabled:hover, .button-blue:disabled:hover, .button-green:disabled:hover, .button-red:disabled:hover, .button-violet:disabled:hover, .button:disabled:active, .button-blue:disabled:active, .button-green:disabled:active, .button-red:disabled:active, .button-violet:disabled:active {
+    color: black;
+    background-color: white; }
+
+/* line 96, ../sass/compassButtons.scss */
+.button-blue {
+  color: #3970a6;
+  background-color: white;
+  border-color: #3970a6;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+  /* line 27, ../sass/compassButtons.scss */
+  .button-blue:hover {
+    background-color: #75a3d0;
+    color: white; }
+  /* line 40, ../sass/compassButtons.scss */
+  .button-blue:active {
+    background-color: #3970a6; }
+  /* line 47, ../sass/compassButtons.scss */
+  .button-blue:disabled:hover, .button-blue:disabled:active {
+    color: #3970a6;
+    background-color: white; }
+
+/* line 101, ../sass/compassButtons.scss */
+.button-green {
+  color: #71a13f;
+  background-color: white;
+  border-color: #71a13f;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+  /* line 27, ../sass/compassButtons.scss */
+  .button-green:hover {
+    background-color: #a4cb7b;
+    color: white; }
+  /* line 40, ../sass/compassButtons.scss */
+  .button-green:active {
+    background-color: #71a13f; }
+  /* line 47, ../sass/compassButtons.scss */
+  .button-green:disabled:hover, .button-green:disabled:active {
+    color: #71a13f;
+    background-color: white; }
+
+/* line 106, ../sass/compassButtons.scss */
+.button-red {
+  color: #b02640;
+  background-color: white;
+  border-color: #b02640;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+  /* line 27, ../sass/compassButtons.scss */
+  .button-red:hover {
+    background-color: #dd5f77;
+    color: white; }
+  /* line 40, ../sass/compassButtons.scss */
+  .button-red:active {
+    background-color: #b02640; }
+  /* line 47, ../sass/compassButtons.scss */
+  .button-red:disabled:hover, .button-red:disabled:active {
+    color: #b02640;
+    background-color: white; }
+
+/* line 111, ../sass/compassButtons.scss */
+.button-violet {
+  color: #696bb1;
+  background-color: white;
+  border-color: #696bb1;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+  /* line 27, ../sass/compassButtons.scss */
+  .button-violet:hover {
+    background-color: #acadd4;
+    color: white; }
+  /* line 40, ../sass/compassButtons.scss */
+  .button-violet:active {
+    background-color: #696bb1; }
+  /* line 47, ../sass/compassButtons.scss */
+  .button-violet:disabled:hover, .button-violet:disabled:active {
+    color: #696bb1;
+    background-color: white; }
+
+/* line 116, ../sass/compassButtons.scss */
+[class*="-rounded"] {
+  min-width: 100px;
+  height: 42px;
+  border: 1px solid;
+  margin: 0;
+  line-height: 42px;
+  text-align: center;
+  padding: 0 10px;
+  cursor: pointer;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px; }
+  /* line 70, ../sass/compassButtons.scss */
+  [class*="-rounded"]:focus {
+    outline: none; }
+  /* line 74, ../sass/compassButtons.scss */
+  [class*="-rounded"]:disabled {
+    opacity: .2;
+    cursor: default; }
+
+/* line 120, ../sass/compassButtons.scss */
+.button-blue-rounded {
+  color: white;
+  background-color: #75a3d0;
+  border-color: #1f3d5a;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+  /* line 27, ../sass/compassButtons.scss */
+  .button-blue-rounded:hover {
+    background-color: #3970a6;
+    color: #75a3d0; }
+  /* line 40, ../sass/compassButtons.scss */
+  .button-blue-rounded:active {
+    background-color: #1f3d5a; }
+  /* line 47, ../sass/compassButtons.scss */
+  .button-blue-rounded:disabled:hover, .button-blue-rounded:disabled:active {
+    color: #1f3d5a;
+    background-color: #75a3d0; }
+
+/* line 124, ../sass/compassButtons.scss */
+.button-green-rounded {
+  color: white;
+  background-color: #a4cb7b;
+  border-color: #3e5822;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+  /* line 27, ../sass/compassButtons.scss */
+  .button-green-rounded:hover {
+    background-color: #71a13f;
+    color: #a4cb7b; }
+  /* line 40, ../sass/compassButtons.scss */
+  .button-green-rounded:active {
+    background-color: #3e5822; }
+  /* line 47, ../sass/compassButtons.scss */
+  .button-green-rounded:disabled:hover, .button-green-rounded:disabled:active {
+    color: #3e5822;
+    background-color: #a4cb7b; }
+
+/* line 128, ../sass/compassButtons.scss */
+.button-red-rounded {
+  color: white;
+  background-color: #dd5f77;
+  border-color: #5c1421;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+  /* line 27, ../sass/compassButtons.scss */
+  .button-red-rounded:hover {
+    background-color: #b02640;
+    color: #dd5f77; }
+  /* line 40, ../sass/compassButtons.scss */
+  .button-red-rounded:active {
+    background-color: #5c1421; }
+  /* line 47, ../sass/compassButtons.scss */
+  .button-red-rounded:disabled:hover, .button-red-rounded:disabled:active {
+    color: #5c1421;
+    background-color: #dd5f77; }
+
+/* line 132, ../sass/compassButtons.scss */
+.button-violet-rounded {
+  color: white;
+  background-color: #acadd4;
+  border-color: #3d3f77;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+  /* line 27, ../sass/compassButtons.scss */
+  .button-violet-rounded:hover {
+    background-color: #696bb1;
+    color: #acadd4; }
+  /* line 40, ../sass/compassButtons.scss */
+  .button-violet-rounded:active {
+    background-color: #3d3f77; }
+  /* line 47, ../sass/compassButtons.scss */
+  .button-violet-rounded:disabled:hover, .button-violet-rounded:disabled:active {
+    color: #3d3f77;
+    background-color: #acadd4; }
+
+/* line 13, ../sass/screen.scss */
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 14px; }
+
+/* line 22, ../sass/screen.scss */
+#wrapper {
+  margin: 40px auto;
+  width: 960px; }
+
+/* line 27, ../sass/screen.scss */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px; }
+
+/* line 34, ../sass/screen.scss */
+hr {
+  height: 1px;
+  border: none;
+  border-bottom: 1px solid #282828;
+  margin: 40px 0; }
+
+/* line 41, ../sass/screen.scss */
+p {
+  margin-bottom: 35px;
+  font-weight: normal; }
