@@ -22,11 +22,12 @@
 	
 	background-color: $background-color;
 	border-color: $base-color;
+	text-decoration: none;
 	@include single-transition(background-color, .2s);
 	
 	&:hover {
 		background-color: $accent-color;
-		
+		text-decoration: none;
 		// inverting the buttons text-color depending on the background-color
 		@if (lightness($accent-color) <= 90%) {
 			color: $background-color;
