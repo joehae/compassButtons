@@ -1,0 +1,72 @@
+// some colors
+$dark-grey:				#282828;
+$light-grey:			#efefef;
+$blue:						#5878b7;
+$green:						#58b783;
+$red:							#d91f1f;
+$violet:					#844dbd;
+
+// custom selectors to create a default set of buttons
+.button {
+	@include button();
+	@include button-color();
+}
+
+.button-black {
+	@extend .button;
+	@include button-color();
+}
+
+.button-light-grey {
+	@extend .button;
+	@include button-color($light-grey);
+}
+
+.button-blue {
+	@extend .button;
+	@include button-color($blue);
+}
+
+.button-green {
+	@extend .button;
+	@include button-color($green);
+}
+
+.button-red {
+	@extend .button;
+	@include button-color($red);
+}
+
+.button-violet {
+	@extend .button;
+	@include button-color($violet);
+}
+
+
+[class *= "-rounded"] {
+	@include button(34px, 100px);
+}
+
+.button-black-rounded {
+	@include button-color($dark-grey, true, 4px);
+}
+
+.button-light-grey-rounded {
+	@include button-color($light-grey, true, 4px);
+}
+
+.button-blue-rounded {
+	@include button-color($blue, true, 4px);
+}
+
+.button-green-rounded {
+	@include button-color($green, true, 4px);
+}
+
+.button-red-rounded {
+	@include button-color($red, true, 4px);
+}
+
+.button-violet-rounded {
+	@include button-color($violet, true, 4px);
+}

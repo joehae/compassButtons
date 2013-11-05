@@ -1,72 +1,86 @@
 /**
- *		SASS/Compass Buttons
+ *		compassButtons 1.01
  *		Author: johanneshagenberg@googlemail.com
  *
  *		requires compass/css3
  *
  */
 
-// button presentational attributes
-@mixin button-color ($accent-color: $dark-grey, $background-color: white) {
+/**
+ *	button presentational attributes
+ *
+ */
+@mixin button-color ($background-color: #282828, $glossy: false, $radius: 0) {
 	
-	// darkening the $accent-color accents
-	$base-color: darken($accent-color, 20%);
+	// setting the accent-colors
+	$dark-accent: 	shade($background-color, 20%);
+	$light-accent:	tint($background-color, 10%);
 	
-	// coloring the buttons text-color depending on its background-color
-	@if (lightness($background-color) >= 90%) {
-		color: $base-color;
-		
-	} @else {
+	// setting a small shiny egde if the $glossy parameter is passed
+	@if ($glossy) {
+		@include single-box-shadow(transparentize(white, .4), 0px, 1px, 1px, 0, true);
+	}
+	
+	// setting the text-color depending on the passed background-color
+	@if (lightness($background-color) < 60%) {
 		color: white;
+	} @else {
+		color: black;
 	}
 	
 	background-color: $background-color;
-	border-color: $base-color;
+	border-color: $dark-accent;
 	text-decoration: none;
 	@include single-transition(background-color, .2s);
+	@include border-radius($radius);
 	
 	&:hover {
-		background-color: $accent-color;
+		background-color: $light-accent;
 		text-decoration: none;
-		// inverting the buttons text-color depending on the background-color
-		@if (lightness($accent-color) <= 90%) {
-			color: $background-color;
-		
-		} @else {
-			color: black;
-		}
-		
 	}
 	
 	&:active {
-		background-color: $base-color;
+		background-color: $dark-accent;
+	}
+	
+	// lightening the background-color on hover doesn't work with bright colors
+	// this will invert the default hover- and active-states
+	@if (lightness($background-color) >= 60%) {
+		&:hover {
+			background-color: $dark-accent;
+			border-color: darken($dark-accent, 20%);
+		}
+		
+		&:active {
+			background-color: darken($dark-accent, 20%);
+		}
 	}
 	
 	&:disabled {
 		
 		&:hover,
 		&:active {
-			color: $base-color;
 			background-color: $background-color;
 		}
 	}
 }
 
-// button behaviour
-@mixin button ($height: 34px, $width: 100px, $radius: 0) {
+/**
+ *	button behaviour
+ */
+@mixin button ($height: 34px, $width: 100px) {
 	
-	// keeping the width dynamic to ensure a flexible usage
+	// keeping the width dynamic to make sure it works with large buttons
 	min-width: $width;
 	height: $height;
 	border: 1px solid;
 	margin: 0;
 	line-height: $height;
 	text-align: center;
-	padding: 0 10px;
+	padding: 0 1%;
 	cursor: pointer;
 	@include inline-block;
 	@include box-sizing(border-box);
-	@include border-radius($radius);
 	
 	&:focus {
 		outline: none;
@@ -76,60 +90,4 @@
 		opacity: .2;
 		cursor: default;
 	}
-}
-
-// custom color-swatches
-$dark-grey:				#282828;
-
-// corporate colors
-$blue:						#75a3d0;
-$green:						#a4cb7b;
-$red:							#dd5f77;
-$yellow:					#f7f15a;
-$violet:					#acadd4;
-
-// custom selectors to create a default set of buttons
-.button {
-	@include button();
-	@include button-color();
-}
-
-.button-blue {
-	@extend .button;
-	@include button-color($blue);
-}
-
-.button-green {
-	@extend .button;
-	@include button-color($green);
-}
-
-.button-red {
-	@extend .button;
-	@include button-color($red);
-}
-
-.button-violet {
-	@extend .button;
-	@include button-color($violet);
-}
-
-[class *= "-rounded"] {
-	@include button(42px, 100px, 4px);
-}
-
-.button-blue-rounded {
-	@include button-color(darken($blue, 20%), $blue);
-}
-
-.button-green-rounded {
-	@include button-color(darken($green, 20%), $green);
-}
-
-.button-red-rounded {
-	@include button-color(darken($red, 20%), $red);
-}
-
-.button-violet-rounded {
-	@include button-color(darken($violet, 20%), $violet);
 }

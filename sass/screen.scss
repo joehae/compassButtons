@@ -6,8 +6,18 @@
 @import "compass/reset";
 @import "compass/css3";
 
-@import "compassButtons";
+@import "compassButtons"; // button mixins
+@import "exampleButtons"; // setting up some examples
 
+//importing fonts from google
+@import "http://fonts.googleapis.com/css?family=Droid+Serif:400,700";
+
+/**
+ *	just some basic page styling for the example-page
+ *
+ *
+ */
+ 
 *,
 html,
 body {
@@ -19,22 +29,49 @@ body {
 	}
 }
 
+pre {
+	font: {
+		family: Monospace;
+	}
+	
+	code {
+		padding: 0;
+	}
+}
+
 #wrapper {
 	margin: 40px auto;
 	width: 960px;
 }
 
+#{headings()} {
+	font: {
+		family: "Droid Serif", Times, serif;
+	}
+}
+
 h1 {
 	font: {
-		size: 24px;
+		size: 32px;
 	}
 	margin-bottom: 20px;
+	
+	span {
+		color: #3d96e4;
+	}
+}
+
+h2 {
+	font: {
+		size: 18px;
+	}
+	margin-bottom: 12px;
 }
 
 hr {
 	height: 1px;
 	border: none;
-	border-bottom: 1px solid $dark-grey;
+	border-bottom: 1px solid #3d96e4;
 	margin: 40px 0;
 }
 
@@ -43,13 +80,29 @@ p {
 	font: {
 		weight: normal;
 	}
+	
+	&.single-paragraph {
+		margin-bottom: 0;
+	}
 }
 
 a {
-	color: blue;
+	color: #da3232;
 	text-decoration: none;
 	
 	&:hover {
 		text-decoration: underline;
+	}
+}
+
+strong {
+	font-weight: bold;
+}
+
+ul {
+	li {
+		padding: 10px;
+		background: #eeeeee;
+		margin-bottom: 10px;
 	}
 }
