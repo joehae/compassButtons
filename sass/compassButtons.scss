@@ -1,93 +1,98 @@
 /**
- *		compassButtons 1.01
- *		Author: johanneshagenberg@googlemail.com
+ *    compassButtons 1.01
+ *    Author: johanneshagenberg@googlemail.com
  *
- *		requires compass/css3
+ *    requires compass/css3
  *
  */
 
 /**
- *	button presentational attributes
+ *  button presentational attributes
  *
  */
 @mixin button-color ($background-color: #282828, $glossy: false, $radius: 0) {
-	
-	// setting the accent-colors
-	$dark-accent: 	shade($background-color, 20%);
-	$light-accent:	tint($background-color, 10%);
-	
-	// setting a small shiny egde if the $glossy parameter is passed
-	@if ($glossy) {
-		@include single-box-shadow(transparentize(white, .4), 0px, 1px, 1px, 0, true);
-	}
-	
-	// setting the text-color depending on the passed background-color
-	@if (lightness($background-color) < 60%) {
-		color: white;
-	} @else {
-		color: black;
-	}
-	
-	background-color: $background-color;
-	border-color: $dark-accent;
-	text-decoration: none;
-	@include single-transition(background-color, .2s);
-	@include border-radius($radius);
-	
-	&:hover {
-		background-color: $light-accent;
-		text-decoration: none;
-	}
-	
-	&:active {
-		background-color: $dark-accent;
-	}
-	
-	// lightening the background-color on hover doesn't work with bright colors
-	// this will invert the default hover- and active-states
-	@if (lightness($background-color) >= 60%) {
-		&:hover {
-			background-color: $dark-accent;
-			border-color: darken($dark-accent, 20%);
-		}
-		
-		&:active {
-			background-color: darken($dark-accent, 20%);
-		}
-	}
-	
-	&:disabled {
-		
-		&:hover,
-		&:active {
-			background-color: $background-color;
-		}
-	}
+  
+  // setting the accent-colors
+  $dark-accent:   shade($background-color, 20%);
+  $light-accent:  tint($background-color, 10%);
+  
+  // setting a small shiny egde if the $glossy parameter is passed
+  @if ($glossy) {
+    @include single-box-shadow(transparentize(white, .4), 0px, 1px, 1px, 0, true);
+  }
+  
+  // setting the text-color depending on the passed background-color
+  @if (lightness($background-color) < 60%) {
+    color: white;
+  } @else {
+    color: black;
+  }
+  
+  background-color: $background-color;
+  border-color: $dark-accent;
+  text-decoration: none;
+  @include single-transition(background-color, .2s);
+  @include border-radius($radius);
+  
+  &:hover {
+    background-color: $light-accent;
+    text-decoration: none;
+  }
+  
+  &:active {
+    background-color: $dark-accent;
+  }
+  
+  // lightening the background-color on hover doesn't work with bright colors
+  // this will invert the default hover- and active-states
+  @if (lightness($background-color) >= 60%) {
+    &:hover {
+      background-color: $dark-accent;
+      border-color: darken($dark-accent, 20%);
+    }
+    
+    &:active {
+      background-color: darken($dark-accent, 20%);
+    }
+  }
+  
+  &:disabled {
+    
+    &:hover,
+    &:active {
+      background-color: $background-color;
+    }
+  }
 }
 
 /**
- *	button behaviour
+ *  button behaviour
  */
 @mixin button ($height: 34px, $width: 100px) {
-	
-	// keeping the width dynamic to make sure it works with large buttons
-	min-width: $width;
-	height: $height;
-	border: 1px solid;
-	margin: 0;
-	line-height: $height;
-	text-align: center;
-	padding: 0 1%;
-	cursor: pointer;
-	@include inline-block;
-	@include box-sizing(border-box);
-	
-	&:focus {
-		outline: none;
-	}
-	
-	&:disabled {
-		opacity: .2;
-		cursor: default;
-	}
+  
+  // keeping the width dynamic to make sure it works with large buttons
+  min-width: $width;
+  height: $height;
+  border: 1px solid;
+  margin: 0;
+  line-height: $height;
+  text-align: center;
+  padding: 0 1%;
+  cursor: pointer;
+  @include inline-block;
+  @include box-sizing(border-box);
+  
+  // overriding iOS-defaults to prevent shiny-appearance
+  -webkit-appearance: none;
+  -webkit-border-radius:0; 
+  border-radius:0;
+  
+  &:focus {
+    outline: none;
+  }
+  
+  &:disabled {
+    opacity: .2;
+    cursor: default;
+  }
 }
